@@ -45,12 +45,26 @@ const ListComponent = () => {
             setError(false)
             console.log("user registred")
         }
-        
-        
-    }
+}
+const successMessage = () => {
+    return (
+      <div
+        className="success"
+        style={{
+          display: submit? '' : 'none',
+        }}>
+        <h1>User {name} successfully registered!!</h1>
+      </div>
+    );
+  };
+ 
     return (
         <div className="list-form">
-            <h2>User</h2>
+            <h2>User Registration</h2>
+            <div className="messages">
+       
+        {successMessage()}
+      </div>
             <form
                 onSubmit={(event) => { HandleforSubmit(event) }}>
                 <label>FirstName:  </label>
